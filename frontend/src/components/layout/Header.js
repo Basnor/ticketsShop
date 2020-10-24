@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 
+import "./header.scss"
+
 export class Header extends Component {
     render() {
         return (
-            <div>
-                <p>Events</p>
+            <div className='header'>
+                <span className='header__label'> Events</span>
                 <nav>
-                    <ul>
-                        <li><a href="#">Hello1</a></li>
-                        <li><a href="#">Hello2</a></li>
+                    <ul className='nav__links'>
+                        <li><a href="#">О мероприятии</a></li>
+                        <li><a href="#">Билеты</a></li>
+                        <li><a href="#">О сервисе</a></li>
+                        <li><a href="#">Корзина</a></li>
                     </ul>
                 </nav>
                 

@@ -7,6 +7,9 @@ import Event from './Event';
 import { Provider } from 'react-redux';
 import store from '../store';
 
+import "../assets/styles/main.scss"
+import "../assets/styles/fonts.scss"
+
 class App extends Component {
     render() {
         return (

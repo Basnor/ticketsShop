@@ -25,12 +25,17 @@
     "@babel/preset-react": "^7.12.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "css-loader": "^5.0.0",
+    "file-loader": "^6.1.1",
+    "sass-loader": "^10.0.4",
+    "style-loader": "^2.0.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "axios": "^0.20.0",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

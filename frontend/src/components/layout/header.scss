@@ -1,5 +1,6 @@
 $color-dark-shade:   #1F2041;
 $color-dark-shade75: rgba(#1F2041, 0.75);
+$color-dark-shade50: rgba(#1F2041, 0.50);
 $color-dark-shade25: rgba(#1F2041, 0.25);
 $color-dark-shade05: rgba(#1F2041, 0.05);
 
@@ -14,9 +15,12 @@ $color-dark-shade05: rgba(#1F2041, 0.05);
 
     background-color: $color-dark-shade05;
 
+    &__img {
+        padding: 0 1.2rem;
+    }
+
     &__label {
         display: inline-block;
-        padding-right: 1.25rem;
 
         font-family: 'Inter', sans-serif;
         font-weight: 400;

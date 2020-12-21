@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 
 import "./header.scss"
+import logo from "../../assets/img/logo.svg"; 
 
 export class Header extends Component {
     render() {
         return (
             <div className='header'>
-                <span className='header__label'> Events</span>
+                <a href ="#">
+                    <img className='header__img' src={logo} alt="Logo" />
+                    <span className='header__label'>Events</span>
+                </a>
                 <nav>
                     <ul className='nav__links'>
                         <li><a href="#">О мероприятии</a></li>

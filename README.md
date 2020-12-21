@@ -9,5 +9,5 @@ For dev:
 ```sh
 source env/bin/activate
 npm run build:dev
-pytnon manage.py runserver
+python manage.py runserver
 ```

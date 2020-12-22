@@ -5,11 +5,14 @@ from django.db import models
 
 
 class Event(models.Model):
-    title = models.CharField(max_length=250)
-    keyWord = models.CharField(max_length=25)
-    description = models.CharField(max_length=500, blank=True)
-    startData = models.DateTimeField()
-    endData = models.DateTimeField()
+    eventTitle = models.CharField(max_length=250)
+    keyWords = models.CharField(max_length=25)
+    shortDescription = models.CharField(max_length=100, blank=True)
+    longDescription = models.CharField(max_length=500, blank=True)
+    image = models.ImageField(upload_to='event', default='')
+    startDate = models.DateTimeField()
+    endDate = models.DateTimeField()
 
     def __str__(self):
-        return self.title
+        return self.eventTitle
+        

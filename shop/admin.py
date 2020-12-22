@@ -5,8 +5,8 @@ from .models import Event
 # Register your models here.
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'keyWord',  'description', 'startData', 'endData')
-    list_display_links = ('id', 'title')
+    list_display = ('id', 'eventTitle', 'keyWords',  'shortDescription', 'longDescription', 'image', 'startDate', 'endDate')
+    list_display_links = ('id', 'eventTitle')
 
 
 admin.site.register(Event, EventAdmin)

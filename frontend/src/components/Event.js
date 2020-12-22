@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { getEvent } from '../actions/event';
 
+import DiscriptionCard from './layout/DiscriptionCard'
+
 class Event extends Component {
 
     static propTypes = {
@@ -17,11 +19,21 @@ class Event extends Component {
     render() {
         return (
             <Fragment>
-                <h2>Data from server</h2>
                 <div>
                     {this.props.event.map( e => (
                         <div key={e.id}>
-                            {e.title}
+                            <h1>{e.eventTitle}</h1>
+
+                            <DiscriptionCard 
+                                title={e.keyWords} 
+                                start={new Date(e.startDate)} 
+                                end={new Date(e.endDate)} 
+                                image={e.image}
+                                description={e.shortDescription}></DiscriptionCard>
+
+                            <h2>Подроная информация о мероприятии</h2>
+                            <p>{e.longDescription}</p>
+
                         </div>
                     ))}
                 </div>

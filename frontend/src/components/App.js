@@ -16,7 +16,6 @@ class App extends Component {
             <Provider store={store}>
                 <div className='container'>
                     <Header />
-                    <h1>Hello world!!!!</h1>
                     <Event />
                 </div>
             </Provider>

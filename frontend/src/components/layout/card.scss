@@ -1,0 +1,44 @@
+$color-dark-shade:   #1F2041;
+$color-dark-shade75: rgba(#1F2041, 0.75);
+$color-dark-shade50: rgba(#1F2041, 0.50);
+$color-dark-shade25: rgba(#1F2041, 0.25);
+$color-dark-shade05: rgba(#1F2041, 0.05);
+
+.card {
+    min-height: 10rem;
+    padding: 2rem 2rem;
+    background-color: $color-dark-shade05;
+
+    &__info {
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 3.6rem;
+            color: $color-dark-shade;
+
+            margin-bottom: 1rem;
+        }
+    
+        span {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 2.4rem;
+            color: $color-dark-shade75;
+        }
+    
+        p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 2.4rem;
+            color: $color-dark-shade75;
+
+            margin: 4rem 0 0 0;
+        }
+    }
+
+    img {
+        width: 95%;
+        margin: 0 1rem;
+        border-radius: 0.4rem;
+    }
+}

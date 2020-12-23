@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import { getEvent } from '../actions/event';
 
 import DiscriptionCard from './layout/DiscriptionCard'
+import OrgCard from './layout/OrgCard'
 
 class Event extends Component {
 
@@ -30,6 +31,17 @@ class Event extends Component {
                                 end={new Date(e.endDate)} 
                                 image={e.image}
                                 description={e.shortDescription}></DiscriptionCard>
+
+                            {e.orgs.map((value, index) => {
+                                return (
+                                    <OrgCard
+                                        name={value.fName}
+                                        sername={value.sName}
+                                        about={value.about}
+                                        photo={value.photo}
+                                    ></OrgCard>
+                                )
+                            })}
 
                             <h2>Подроная информация о мероприятии</h2>
                             <p>{e.longDescription}</p>

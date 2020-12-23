@@ -7,7 +7,7 @@ axios.defaults.xsrfCookieName = 'csrftoken';
 
 // Get event
 export const getEvent = () => dispatch => {
-    axios.get('api/shop/')
+    axios.get('api/event/')
         .then(result => {
             dispatch({
                 type: GET_EVENT,

@@ -35,10 +35,12 @@ class Event extends Component {
                             {e.orgs.map((value, index) => {
                                 return (
                                     <OrgCard
+                                        key={index}
                                         name={value.fName}
                                         sername={value.sName}
                                         about={value.about}
                                         photo={value.photo}
+                                        links={value.links}
                                     ></OrgCard>
                                 )
                             })}

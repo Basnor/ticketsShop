@@ -23,4 +23,11 @@ class Organizer(models.Model):
     photo = models.ImageField(upload_to='org', default='')
     about = models.CharField(max_length=500, blank=True)
 
+class SocialLinks(models.Model):
+    organizerId = models.ForeignKey(Organizer, related_name='links', on_delete=models.CASCADE)
+    instagram = models.CharField(max_length=100, blank=True)
+    twitter = models.CharField(max_length=100, blank=True)
+    facebook = models.CharField(max_length=100, blank=True)
+    linkedein = models.CharField(max_length=100, blank=True)
+
     

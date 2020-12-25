@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './layout/Header';
+import Footer from './layout/Footer';
 import Event from './Event';
 
 import { Provider } from 'react-redux';
@@ -17,6 +18,7 @@ class App extends Component {
                 <div className='container'>
                     <Header />
                     <Event />
+                    <Footer />
                 </div>
             </Provider>
         )

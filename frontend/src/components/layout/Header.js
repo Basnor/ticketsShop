@@ -4,6 +4,43 @@ import "./header.scss"
 import logo from "../../assets/img/logo.svg"; 
 
 export class Header extends Component {
+
+    getLinks() {
+        console.log(location.pathname);
+        let output;
+        let eventActive;
+        let ticketsActive;
+        let aboutActive;
+        let basketActive;
+
+        if (location.pathname === '/event/') {
+            eventActive = 'active';
+        }
+
+        if (location.pathname === '/tickets/') {
+            ticketsActive = 'active';
+        }
+
+        if (location.pathname === '/about/') {
+            aboutActive = 'active';
+        }
+
+        if (location.pathname === '/basket/') {
+            basketActive = 'active';
+        }
+
+        output = (
+            <ul className='nav__links'>
+                <li><a href="/event/" className={eventActive}>О мероприятии</a></li>
+                <li><a href="/tickets/" className={ticketsActive}>Билеты</a></li>
+                <li><a href="/about/" className={aboutActive}>О сервисе</a></li>
+                <li><a href="/basket/" className={basketActive}>Корзина</a></li>
+            </ul>
+        );
+
+        return output;
+    }
+
     render() {
         return (
             <div className='header'>
@@ -12,12 +49,7 @@ export class Header extends Component {
                     <span className='header__label'>Events</span>
                 </a>
                 <nav>
-                    <ul className='nav__links'>
-                        <li><a href="/event/">О мероприятии</a></li>
-                        <li><a href="/tickets/">Билеты</a></li>
-                        <li><a href="/about/">О сервисе</a></li>
-                        <li><a href="/basket/">Корзина</a></li>
-                    </ul>
+                    {this.getLinks()}
                 </nav>
                 
             </div>

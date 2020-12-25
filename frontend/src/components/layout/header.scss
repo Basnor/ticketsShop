@@ -38,6 +38,10 @@ $color-dark-shade05: rgba(#1F2041, 0.05);
 
         text-decoration: none;
     }
+
+    .active {
+        color: $color-dark-shade75;
+    }
 }
 
 .header .nav {

@@ -60,3 +60,16 @@ $color-dark-shade05: rgba(#1F2041, 0.05);
         }
     }
 }
+
+@media only screen and (max-width: 800px) {
+
+    .header__label {
+        margin: 2rem 0;
+    }
+
+    .header .nav__links > li {
+        display: block;
+        width: 100%;
+        margin: 2rem 0;
+    }
+}

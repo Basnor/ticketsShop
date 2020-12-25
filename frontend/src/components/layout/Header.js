@@ -13,10 +13,10 @@ export class Header extends Component {
                 </a>
                 <nav>
                     <ul className='nav__links'>
-                        <li><a href="#">О мероприятии</a></li>
-                        <li><a href="#">Билеты</a></li>
-                        <li><a href="#">О сервисе</a></li>
-                        <li><a href="#">Корзина</a></li>
+                        <li><a href="/event/">О мероприятии</a></li>
+                        <li><a href="/tickets/">Билеты</a></li>
+                        <li><a href="/about/">О сервисе</a></li>
+                        <li><a href="/basket/">Корзина</a></li>
                     </ul>
                 </nav>
                 

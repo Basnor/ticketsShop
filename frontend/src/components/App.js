@@ -1,9 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import BaseRouter from '../routes';
 import ReactDOM from 'react-dom';
 
 import Header from './layout/Header';
 import Footer from './layout/Footer';
-import Event from './Event';
 
 import { Provider } from 'react-redux';
 import store from '../store';
@@ -17,7 +18,9 @@ class App extends Component {
             <Provider store={store}>
                 <div className='container'>
                     <Header />
-                    <Event />
+                    <Router>
+                        <BaseRouter />
+                    </Router>
                     <Footer />
                 </div>
             </Provider>

@@ -20,37 +20,35 @@ class Event extends Component {
     render() {
         return (
             <Fragment>
-                <div>
-                    {this.props.event.map( e => (
-                        <div key={e.id}>
-                            <h1>{e.eventTitle}</h1>
+                {this.props.event.map( e => (
+                    <div key={e.id}>
+                        <h1>{e.eventTitle}</h1>
 
-                            <DiscriptionCard 
-                                title={e.keyWords} 
-                                start={new Date(e.startDate)} 
-                                end={new Date(e.endDate)} 
-                                image={e.image}
-                                description={e.shortDescription}></DiscriptionCard>
+                        <DiscriptionCard 
+                            title={e.keyWords} 
+                            start={new Date(e.startDate)} 
+                            end={new Date(e.endDate)} 
+                            image={e.image}
+                            description={e.shortDescription}></DiscriptionCard>
 
-                            {e.orgs.map((value, index) => {
-                                return (
-                                    <OrgCard
-                                        key={index}
-                                        name={value.fName}
-                                        sername={value.sName}
-                                        about={value.about}
-                                        photo={value.photo}
-                                        links={value.links}
-                                    ></OrgCard>
-                                )
-                            })}
+                        {e.orgs.map((value, index) => {
+                            return (
+                                <OrgCard
+                                    key={index}
+                                    name={value.fName}
+                                    sername={value.sName}
+                                    about={value.about}
+                                    photo={value.photo}
+                                    links={value.links}
+                                ></OrgCard>
+                            )
+                        })}
 
-                            <h2>Подроная информация о мероприятии</h2>
-                            <p>{e.longDescription}</p>
+                        <h2>Подроная информация о мероприятии</h2>
+                        <p>{e.longDescription}</p>
 
-                        </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </Fragment>
         )
     }

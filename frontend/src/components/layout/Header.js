@@ -6,7 +6,6 @@ import logo from "../../assets/img/logo.svg";
 export class Header extends Component {
 
     getLinks() {
-        console.log(location.pathname);
         let output;
         let eventActive;
         let ticketsActive;

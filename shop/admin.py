@@ -1,8 +1,14 @@
 from django.contrib import admin
-from .models import Event, Organizer, SocialLinks
+from .models import Event, Organizer, SocialLinks, UserAccount
 
 
 # Register your models here.
+
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('id', 'email', 'name', 'password', 'is_superuser', 'is_staff', 'is_active')
+    list_display_links = ('id', 'email')
+
+admin.site.register(UserAccount, UserAdmin)
 
 class EventAdmin(admin.ModelAdmin):
     list_display = ('id', 'eventTitle', 'keyWords',  'shortDescription', 'longDescription', 'image', 'startDate', 'endDate')

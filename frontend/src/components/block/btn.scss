@@ -1,0 +1,28 @@
+$color-dark-shade:   #1F2041;
+$color-dark-shade75: rgba(#1F2041, 0.75);
+$color-dark-shade50: rgba(#1F2041, 0.50);
+$color-dark-shade25: rgba(#1F2041, 0.25);
+$color-dark-shade05: rgba(#1F2041, 0.05);
+
+.btn {
+    padding: 1rem 2rem;
+    background-color: white;
+    border: 0.1rem solid $color-dark-shade50;
+    border-radius: 0.4rem;
+    cursor: pointer;
+
+    &_white {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 1.4rem;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $color-dark-shade75;
+
+        &:hover {
+            border-color: $color-dark-shade;
+            color: $color-dark-shade;
+        }
+
+    }
+}

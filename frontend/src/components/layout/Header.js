@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import "./header.scss"
+import "../block/btn.scss"
 import logo from "../../assets/img/logo.svg"; 
 
 export class Header extends Component {
@@ -34,6 +35,7 @@ export class Header extends Component {
                 <li><a href="/tickets/" className={ticketsActive}>Билеты</a></li>
                 <li><a href="/about/" className={aboutActive}>О сервисе</a></li>
                 <li><a href="/basket/" className={basketActive}>Корзина</a></li>
+                <li><a href="/" className='btn btn_white'>Войти</a></li>
             </ul>
         );
 

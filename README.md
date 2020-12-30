@@ -14,7 +14,12 @@ python manage.py runserver
 
 ## admin/
 
-+ Username: user
+```sh
+python manage.py createsuperuser
+```
+
++ Email: user@gmail.com
++ Name: User Userovich
 + Password: user
 
 ## api/shop/

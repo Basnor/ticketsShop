@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
+    'accounts.apps.AccountsConfig',
     'frontend.apps.FrontendConfig',
     'rest_framework.authtoken',
     'rest_framework',
@@ -168,10 +169,10 @@ DJOSER = {
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS': {
-        'user_create': 'shop.serializers.UserCreateSerializer',
-        'user': 'shop.serializers.UserCreateSerializer',
+        'user_create': 'accounts.serializers.UserCreateSerializer',
+        'user': 'accounts.serializers.UserCreateSerializer',
         'user_delete': 'djoser.serializers.UserDeleteSerializer',
     },
 }
 
-AUTH_USER_MODEL = 'shop.UserAccount'
+AUTH_USER_MODEL = 'accounts.UserAccount'

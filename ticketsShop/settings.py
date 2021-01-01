@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
+    'accounts.apps.AccountsConfig',
     'frontend.apps.FrontendConfig',
     'rest_framework',
+    'knox',
 ]
 
 MIDDLEWARE = [
@@ -134,9 +136,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'ticketsShop/media/')
 
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
 }

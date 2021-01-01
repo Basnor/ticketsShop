@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Designing Web Applications",
   "scripts": {
-    "build:dev": "webpack --watch --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
-    "start:dev": "webpack-dev-server --mode development --entry ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
+    "build:dev": "webpack --watch --mode development ./frontend/src/index.js --output ./frontend/static/main.js",
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/main.js",
+    "start:dev": "webpack-dev-server --mode development --entry ./frontend/src/index.js --output ./frontend/static/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

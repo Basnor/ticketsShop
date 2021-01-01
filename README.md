@@ -14,6 +14,10 @@ python manage.py runserver
 
 ## admin/
 
+```sh
+python manage.py createsuperuser
+```
+
 + Username: user
 + Password: user
 

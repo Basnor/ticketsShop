@@ -6,7 +6,7 @@ import { login } from '../../actions/auth';
 
 export class Login extends Component {
   state = {
-    username: '',
+    email: '',
     password: '',
   };
 
@@ -17,7 +17,7 @@ export class Login extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.login(this.state.username, this.state.password);
+    this.props.login(this.state.email, this.state.password);
   };
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
@@ -26,29 +26,29 @@ export class Login extends Component {
     if (this.props.isAuthenticated) {
       return <Redirect to="/" />;
     }
-    const { username, password } = this.state;
+    const { email, password } = this.state;
     return (
       <div className="">
         <div className="">
-          <h2 className="">Login</h2>
+          <h2 className="">Войти</h2>
           <form onSubmit={this.onSubmit}>
             <div className="">
-              <label>Username</label>
               <input
                 type="text"
                 className=""
-                name="username"
+                name="email"
+                placeholder="Email"
                 onChange={this.onChange}
-                value={username}
+                value={email}
               />
             </div>
 
             <div className="">
-              <label>Password</label>
               <input
                 type="password"
                 className=""
                 name="password"
+                placeholder="Пароль"
                 onChange={this.onChange}
                 value={password}
               />
@@ -56,11 +56,11 @@ export class Login extends Component {
 
             <div className="">
               <button type="submit" className="">
-                Login
+                Войти
               </button>
             </div>
             <p>
-              Don't have an account? <Link to="/register">Register</Link>
+              <Link to="/register" className="">Создать аккаунт</Link>
             </p>
           </form>
         </div>

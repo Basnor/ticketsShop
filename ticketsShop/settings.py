@@ -138,3 +138,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/media/')
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
 }
+
+AUTH_USER_MODEL = 'accounts.UserAccount'

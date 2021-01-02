@@ -18,8 +18,8 @@ python manage.py runserver
 python manage.py createsuperuser
 ```
 
-+ Username: user
-+ Password: user
++ Username: admin
++ Password: admin
 
 ## api/shop/
 

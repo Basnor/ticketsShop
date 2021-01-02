@@ -132,7 +132,7 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'ticketsShop/media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/media/')
 
 
 REST_FRAMEWORK = {

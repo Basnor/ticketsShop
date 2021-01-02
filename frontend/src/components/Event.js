@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { getEvent } from '../actions/event';
 
-import DiscriptionCard from './layout/DiscriptionCard'
-import OrgCard from './layout/OrgCard'
+import DiscriptionCard from './common/DiscriptionCard'
+import OrgCard from './common/OrgCard'
 
 class Event extends Component {
 

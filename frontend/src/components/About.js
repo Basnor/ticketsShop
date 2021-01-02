@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Grid from '@material-ui/core/Grid';
 
-import DiscriptionCard from './layout/DiscriptionCard'
+import DiscriptionCard from './common/DiscriptionCard'
 import img from "../assets/img/about.png"; 
 
 class About extends Component {

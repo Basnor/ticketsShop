@@ -1,0 +1,103 @@
+$color-dark-shade:   #1F2041;
+$color-dark-shade75: rgba(#1F2041, 0.75);
+$color-dark-shade50: rgba(#1F2041, 0.50);
+$color-dark-shade25: rgba(#1F2041, 0.25);
+$color-dark-shade05: rgba(#1F2041, 0.05);
+
+$textfield-width-l: 38rem;
+$textfield-height:  4.4rem;
+$textfield-border:  0.1rem solid $color-dark-shade25;
+$textfield-border-radius: 0.4rem;
+
+$textfield-focused-border-color: $color-dark-shade50;
+$textfield-focused-font-color: $color-dark-shade75;
+$textfield-default-color: $color-dark-shade25;
+
+$textfield-primary-font:   1.2rem;
+$textfield-secondary-font: 1.4rem;
+
+
+@mixin box-styles ($width: $textfield-width-l, 
+                   $height: $textfield-height, 
+                   $box-sizing: border-box,
+                   $border-radius: $textfield-border-radius, 
+                   $border: $textfield-border) {
+    max-width: $width;
+    height: $height;
+    box-sizing: $box-sizing;
+    border-radius: $border-radius;
+    border: $border;
+}
+
+.textfield {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: 0.5rem;
+
+    &__title {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 1.6rem;
+        color: $color-dark-shade;
+
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__box {
+        @include box-styles();
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        background-color: white;
+
+        &__input {
+            width: 100%;
+            
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: $color-dark-shade75;
+
+
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+
+            align-self: center;
+            flex-grow: 1;
+
+            background-color: white;
+        
+            &::placeholder {
+                color: $textfield-default-color;
+            }
+
+        }
+
+        &_default {
+            border-color: $textfield-default-color;
+        }
+
+        &_focused, &:focus, &:hover {
+            border-color: $textfield-focused-border-color;
+            outline: none;
+        }
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill {
+    font: 400 1.6rem 'Inter', sans-serif;
+    border: 0;
+    -webkit-text-fill-color: $color-dark-shade75;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);  
+}

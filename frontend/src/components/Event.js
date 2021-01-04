@@ -21,7 +21,7 @@ class Event extends Component {
         return (
             <Fragment>
                 {this.props.event.map( e => (
-                    <div key={e.id}>
+                    <div className='content' key={e.id}>
                         <h1>{e.eventTitle}</h1>
 
                         <DiscriptionCard 
@@ -46,7 +46,6 @@ class Event extends Component {
 
                         <h2>Подроная информация о мероприятии</h2>
                         <p>{e.longDescription}</p>
-
                     </div>
                 ))}
             </Fragment>

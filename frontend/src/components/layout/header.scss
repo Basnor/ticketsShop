@@ -4,6 +4,15 @@ $color-dark-shade50: rgba(#1F2041, 0.50);
 $color-dark-shade25: rgba(#1F2041, 0.25);
 $color-dark-shade05: rgba(#1F2041, 0.05);
 
+.MuiMenuItem-root {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: $color-dark-shade75;
+}
+
 .header {
     min-height: 7rem;
     padding: 0 3.4rem;
@@ -42,6 +51,19 @@ $color-dark-shade05: rgba(#1F2041, 0.05);
     .active {
         color: $color-dark-shade75;
     }
+
+    .MuiButton-root {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 1.4rem;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $color-dark-shade75;
+        vertical-align: baseline;
+
+        min-width: 2rem;
+        padding: 0;
+    }
 }
 
 .header .nav {
@@ -51,7 +73,7 @@ $color-dark-shade05: rgba(#1F2041, 0.05);
 
     &__links > li {
         display: inline-block;
-        margin-left: 4.2rem;
+        margin-left: 2.3rem;
 
         &:first-child {
             margin-right: 0;

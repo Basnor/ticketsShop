@@ -8,14 +8,13 @@ class About extends Component {
     render() {
         return (
             <Fragment>
-                <div>
+                <div className='content'>
                     <h1>Сервис для продажи билетов</h1>
                     <DiscriptionCard 
                             title="Для кого"
                             image={img}>
                     </DiscriptionCard>
-
-                    <Grid container spacing={1}>
+                    <Grid container>
                         <Grid item xs={12} md={6}>
                             <h2>Создавай расписание</h2>
                             <p>Создавай сетку мероприятий и детальное описание каждого из них. Можно выбирать день, время, место, название, данные о ведущем, тип мероприятия, оформление, количество доступных мест и цену.</p>

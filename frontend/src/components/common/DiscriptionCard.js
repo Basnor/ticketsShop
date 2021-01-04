@@ -22,7 +22,7 @@ export class DiscriptionCard extends Component {
             );
         }
 
-        if (location.pathname === '/about/') {
+        if (location.pathname === '/about/' || location.pathname === '/') {
             output = (
                 <div className='card__info'>
                     <h3>{this.props.title}</h3>

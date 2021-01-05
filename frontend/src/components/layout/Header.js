@@ -75,6 +75,25 @@ export class Header extends Component {
             }
         }))(MenuItem);
 
+        const StyledMenu = withStyles({
+            paper: {
+                color: 'rgba(31,32,65, 0.75)',
+            }
+        })((props) => (
+            <Menu
+                getContentAnchorEl={null}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+                {...props}
+            />
+        ));
+
         let navLinks;
         if (isLoading) {
             navLinks = <div></div>;
@@ -85,13 +104,13 @@ export class Header extends Component {
         const authLinks = (
             <div>
                 <Button 
-                    aria-controls="simple-menu" 
+                    aria-controls="menu" 
                     aria-haspopup="true" 
                     onClick={this.handleClick}>
                         {user ? `${user.first_name} ${user.last_name}` : ''}
                 </Button>
-                <Menu
-                    id="simple-menu"
+                <StyledMenu
+                    id="menu"
                     anchorEl={anchorEl}
                     keepMounted
                     open={Boolean(anchorEl)}
@@ -99,7 +118,7 @@ export class Header extends Component {
                 >
                     <StyledMenuItem component="a" href="/event/">Профиль</StyledMenuItem>
                     <StyledMenuItem onClick={this.props.logout}>Выйти</StyledMenuItem>
-                </Menu>
+                </StyledMenu>
             </div>
         );
       

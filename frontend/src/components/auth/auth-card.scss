@@ -53,6 +53,33 @@ $color-dark-shade05: rgba(#1F2041, 0.05);
             margin-bottom: 1rem;
         }
     }
+
+    .error-msg {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        margin-top: 0rem;
+        margin-bottom: 2rem;
+
+        display: flex;
+        justify-content: flex-start;
+
+        max-width: 38rem;
+        box-sizing: border-box;
+        border-radius: 0.4rem;
+        border: 0.1rem solid #F5222D;
+        background-color: white;
+
+        span {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: #F5222D;
+
+            padding: 0.4rem 0;
+            margin: 0;
+        }
+    }
 }
 
 @media only screen and (max-width: 350px) {

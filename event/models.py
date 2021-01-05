@@ -1,8 +1,6 @@
 from django.db import models
 
-
 # Create your models here.
-
 
 class Event(models.Model):
     eventTitle = models.CharField(max_length=250)
@@ -29,5 +27,3 @@ class SocialLinks(models.Model):
     twitter = models.CharField(max_length=100, blank=True)
     facebook = models.CharField(max_length=100, blank=True)
     linkedein = models.CharField(max_length=100, blank=True)
-
-    

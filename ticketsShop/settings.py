@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'event.apps.EventConfig',
     'accounts.apps.AccountsConfig',
+    'ticket.apps.TicketConfig',
     'frontend.apps.FrontendConfig',
     'rest_framework',
     'knox',

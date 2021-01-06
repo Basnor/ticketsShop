@@ -41,6 +41,13 @@ h4 {
     margin: 2rem 0rem;
 }
 
+h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: $color-dark-shade;
+}
+
 p {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -48,6 +55,15 @@ p {
     color: $color-dark-shade75;
 
     margin: 0rem 2rem;
+}
+
+time {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: $color-dark-shade75;
+
+    position: relative;
 }
 
 .content {

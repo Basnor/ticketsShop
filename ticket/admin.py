@@ -6,14 +6,14 @@ from .models import TicketDetail, Type, Ticket
 
 
 class TicketDetailAdmin(admin.ModelAdmin):
-    list_display = ('id', 'ticketTitle', 'price', 'numLeft', 'numMax', 'ticketType', 'startDate', 'endDate')
+    list_display = ('id', 'ticketTitle', 'price', 'numLeft', 'numMax', 'startDate', 'endDate', 'ticketType')
     list_display_links = ('id', 'ticketTitle')
 
 admin.site.register(TicketDetail, TicketDetailAdmin)
 
 
 class TypeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'ticketType')
+    list_display = ('id', 'ticketType', 'info')
     list_display_links = ('id', 'ticketType')
 
 admin.site.register(Type, TypeAdmin)

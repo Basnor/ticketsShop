@@ -1,7 +1,7 @@
 from rest_framework import routers
-from .api import TicketDetailViewSet
+from .api import TicketByTypeViewSet
 
 router = routers.DefaultRouter()
-router.register('ticket/api', TicketDetailViewSet, 'ticket')
+router.register('tickets/api', TicketByTypeViewSet, 'ticket')
 
 urlpatterns = router.urls

@@ -6,6 +6,7 @@ from event.models import Event
 
 class Type(models.Model):
     ticketType = models.CharField(max_length=50)
+    info = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return self.ticketType
@@ -19,9 +20,9 @@ class TicketDetail(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     numLeft = models.PositiveIntegerField(default=0)
     numMax = models.PositiveIntegerField(default=0)
-    ticketType = models.ForeignKey(Type, related_name='type', on_delete=models.CASCADE)
     startDate = models.DateTimeField()
     endDate = models.DateTimeField()
+    ticketType = models.ForeignKey(Type, related_name='tickets', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.ticketTitle

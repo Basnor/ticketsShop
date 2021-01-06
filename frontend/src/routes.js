@@ -15,6 +15,7 @@ const BaseRouter = () => (
         <Route exact path='/event/' component={Event} />{" "}
         <Route exact path='/basket/' component={Basket} />{" "}
         <Route exact path='/tickets/' component={Tickets} />{" "}
+        <Route exact path='/tickets/:ticketID/' component={About} />{" "}
         <Route exact path='/login/' component={Login} />{" "}
         <Route exact path='/register/' component={Register} />{" "}
     </Switch>

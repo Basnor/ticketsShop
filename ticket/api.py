@@ -1,11 +1,12 @@
-from .models import TicketDetail
+from .models import Type
 from rest_framework import viewsets, permissions
-from .serializers import TicketDetailSerializer
+from .serializers import TypeSerializer
 
 
-class TicketDetailViewSet(viewsets.ModelViewSet):
-    queryset = TicketDetail.objects.all()
+class TicketByTypeViewSet(viewsets.ModelViewSet):
+    queryset = Type.objects.all()
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = TicketDetailSerializer
+    serializer_class = TypeSerializer
+

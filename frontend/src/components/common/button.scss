@@ -10,7 +10,9 @@ $color-dark-shade05: rgba(#1F2041, 0.05);
     border-radius: 0.4rem;
     cursor: pointer;
     text-decoration: none;
-    text-align: center;
+
+    display: flex;
+    align-items: center;
 
     &_white {
         font-family: 'Inter', sans-serif;

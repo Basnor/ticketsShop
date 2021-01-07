@@ -7,7 +7,7 @@ urlpatterns = [
     path('event/', views.index),
     path('about/', views.index),
     path('tickets/', views.index),
-    # path('tickets/<pk>/', views.index),
+    path('tickets/<int:pk>/', views.indexDetail),
     path('basket/', views.index),
     path('login/', views.index),
     path('register/', views.index)

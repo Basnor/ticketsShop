@@ -10,7 +10,7 @@ import FormControl from '@material-ui/core/FormControl';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { getTicket } from '../actions/ticket';
+import { getTypes } from '../actions/ticket';
 import styled from 'styled-components';
 
 const Info = styled.span`
@@ -44,12 +44,12 @@ class Tickets extends Component {
     };
 
     static propTypes = {
-        ticket: PropTypes.array.isRequired,
-        getTicket: PropTypes.func.isRequired
+        ticketTypes: PropTypes.array.isRequired,
+        getTypes: PropTypes.func.isRequired
     };
 
     componentDidMount() {
-        this.props.getTicket();
+        this.props.getTypes();
     };
 
     handleChange = (event) => {
@@ -121,14 +121,14 @@ class Tickets extends Component {
                         name="type"
                     >
                         <option value="">Тип билета</option>
-                        {this.props.ticket.map( e => (
+                        {this.props.ticketTypes.map( e => (
                             <option value={e.id} key={e.id}>{e.ticketType}</option>
                         ))}
                     </StyledNativeSelect>
                 </StyledFormControl>
 
                 <div className='content'>
-                    {this.props.ticket.filter( e => e.id == type || !type ).map( e => (
+                    {this.props.ticketTypes.filter( e => e.id == type || !type ).map( e => (
                         <div key={e.id} style={ e.id == 1 ? darkBackStyle : null }>
                             <TicketType>{e.ticketType}</TicketType>
                             <Info>{e.info}</Info>
@@ -138,7 +138,7 @@ class Tickets extends Component {
                                     return (
                                         <StyledGrid item xs={12} sm={6} md={4} key={index}>
                                             <StyledCard>
-                                                <Link href="/about/" component={CardActionArea}>
+                                                <Link href={"/tickets/" + value.id + "/"} component={CardActionArea}>
                                                     <CardMedia
                                                         component="img"
                                                         alt="Ticket image"
@@ -165,7 +165,7 @@ class Tickets extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    ticket: state.ticket.ticket
+    ticketTypes: state.ticket.ticketTypes
 });
 
-export default connect(mapStateToProps, { getTicket })(Tickets);
+export default connect(mapStateToProps, { getTypes })(Tickets);

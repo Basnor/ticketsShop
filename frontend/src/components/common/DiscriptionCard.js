@@ -36,6 +36,17 @@ export class DiscriptionCard extends Component {
             );
         }
 
+        const split = location.pathname.split("/");
+        let url = split.slice(0, split.length - 2).join("/") + "/";
+        if (url === '/tickets/') {
+            output = (
+                <div className='card__info'>
+                    <h3>{this.props.title}</h3>
+                    <p>{this.props.description}</p>
+                </div>
+            );
+        }
+
         return output;
     }
 

@@ -28,6 +28,22 @@ class TicketDetail(models.Model):
         return self.ticketTitle
 
 
+class Organizer(models.Model):
+    eventId = models.ForeignKey(TicketDetail, related_name='orgs', on_delete=models.CASCADE)
+    fName = models.CharField(max_length=20)
+    sName = models.CharField(max_length=20)
+    photo = models.ImageField(upload_to='org', default='')
+    about = models.CharField(max_length=500, blank=True)
+
+
+class SocialLinks(models.Model):
+    organizerId = models.ForeignKey(Organizer, related_name='links', on_delete=models.CASCADE)
+    instagram = models.CharField(max_length=100, blank=True)
+    twitter = models.CharField(max_length=100, blank=True)
+    facebook = models.CharField(max_length=100, blank=True)
+    linkedein = models.CharField(max_length=100, blank=True)
+
+
 class Ticket(models.Model):
     ticket = models.ForeignKey(TicketDetail, related_name='ticket_detail', on_delete=models.CASCADE)
     event = models.ForeignKey(Event, related_name='event', on_delete=models.CASCADE)

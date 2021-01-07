@@ -6,6 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
+import FormControl from '@material-ui/core/FormControl';
+import NativeSelect from '@material-ui/core/NativeSelect';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { getTicket } from '../actions/ticket';
@@ -37,6 +39,9 @@ const darkBackStyle = {
 };
 
 class Tickets extends Component {
+    state = {
+        type: ''
+    };
 
     static propTypes = {
         ticket: PropTypes.array.isRequired,
@@ -47,7 +52,14 @@ class Tickets extends Component {
         this.props.getTicket();
     };
 
+    handleChange = (event) => {
+        const name = event.target.name;
+        this.setState({ [name]: event.target.value });
+    };
+
     render() {
+        const { type } = this.state;
+
         const StyledCard = withStyles((theme) => ({
             root: {
                 maxWidth: 345,
@@ -69,6 +81,31 @@ class Tickets extends Component {
             }
         }))(CardContent);
 
+        const StyledFormControl = withStyles((theme) => ({
+            root: {
+                margin: '2rem',
+                minWidth: '30rem'
+            }
+        }))(FormControl);
+
+        const StyledNativeSelect = withStyles((theme) => ({
+            root: {
+                fontFamily: `'Inter', sans-serif`,
+                fontWeight: '400',
+                fontSize: '1.6rem',
+                lineHeight: '1.6rem',
+                color: '#1F2041',
+
+                padding: '1rem',
+            },
+            icon: {
+                width: '3rem',
+                height: '3rem',
+                top: 'calc(50% - 2.6rem)',
+                padding: '1rem',
+            }
+        }))(NativeSelect);
+
         const timeFormatter = new Intl.DateTimeFormat("ru", {
             hour: "numeric",
             minute: "numeric"
@@ -76,9 +113,22 @@ class Tickets extends Component {
 
         return (
             <Fragment>
-                <h1>Билеты</h1>
+                <h1 style={{ marginBottom: '1rem' }}>Билеты</h1>
+                <StyledFormControl>
+                    <StyledNativeSelect
+                        value={type}
+                        onChange={this.handleChange}
+                        name="type"
+                    >
+                        <option value="">Тип билета</option>
+                        {this.props.ticket.map( e => (
+                            <option value={e.id} key={e.id}>{e.ticketType}</option>
+                        ))}
+                    </StyledNativeSelect>
+                </StyledFormControl>
+
                 <div className='content'>
-                    {this.props.ticket.map( e => (
+                    {this.props.ticket.filter( e => e.id == type || !type ).map( e => (
                         <div key={e.id} style={ e.id == 1 ? darkBackStyle : null }>
                             <TicketType>{e.ticketType}</TicketType>
                             <Info>{e.info}</Info>

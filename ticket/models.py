@@ -27,6 +27,9 @@ class TicketDetail(models.Model):
     def __str__(self):
         return self.ticketTitle
 
+    def return_price(self):
+        return self.price
+
 
 class Organizer(models.Model):
     eventId = models.ForeignKey(TicketDetail, related_name='orgs', on_delete=models.CASCADE)
@@ -45,6 +48,11 @@ class SocialLinks(models.Model):
 
 
 class Ticket(models.Model):
-    ticket = models.ForeignKey(TicketDetail, related_name='ticket_detail', on_delete=models.CASCADE)
-    event = models.ForeignKey(Event, related_name='event', on_delete=models.CASCADE)
+    ticket = models.ForeignKey(TicketDetail, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return str(self.id)
 
+    def get_cost(self):
+        return self.ticket.return_price()

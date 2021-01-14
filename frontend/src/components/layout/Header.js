@@ -23,7 +23,7 @@ export class Header extends Component {
 
     handleClick = (event) => {
         this.setState({ anchorEl: event.currentTarget });
-      };
+    };
     
     handleClose = () => {
         this.setState({ anchorEl: null });

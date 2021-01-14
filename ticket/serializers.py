@@ -34,9 +34,6 @@ class TypeSerializer(serializers.ModelSerializer):
 
 
 class TicketSerializer(serializers.ModelSerializer):
-    ticket_detail = TicketDetailSerializer(many=True, read_only=True)
-    event = EventSerializer(many=True, read_only=True)
-
     class Meta:
         model = Ticket
         fields = '__all__'

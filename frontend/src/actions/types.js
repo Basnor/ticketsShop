@@ -2,6 +2,11 @@ export const GET_EVENT = "GET_EVENT";
 export const GET_TICKET = "GET_TICKET";
 export const GET_TICKET_TYPES = "GET_TICKET_TYPES";
 
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+export const SUB_QUANTITY = 'SUB_QUANTITY';
+export const ADD_QUANTITY = 'ADD_QUANTITY';
+
 export const GET_ERRORS = 'GET_ERRORS';
 export const CREATE_MESSAGE = 'CREATE_MESSAGE';
 export const USER_LOADING = 'USER_LOADING';

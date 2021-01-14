@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'event.apps.EventConfig',
     'accounts.apps.AccountsConfig',
     'ticket.apps.TicketConfig',
+    'orders.apps.OrdersConfig',
     'frontend.apps.FrontendConfig',
     'rest_framework',
     'knox',

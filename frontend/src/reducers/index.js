@@ -4,6 +4,7 @@ import ticket from './ticket';
 import messages from './messages';
 import auth from './auth';
 import errors from './errors';
+import cart from './cart';
 
 
 export default combineReducers({
@@ -11,5 +12,6 @@ export default combineReducers({
     ticket,
     messages,
     auth,
-    errors
+    errors,
+    cart
 });

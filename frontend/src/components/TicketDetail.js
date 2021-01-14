@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { getTicket } from '../actions/ticket';
+import { addToCart } from '../actions/cart';
 import { withStyles } from '@material-ui/core/styles';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Grid from '@material-ui/core/Grid';
@@ -21,11 +22,27 @@ const Info = styled.span`
     padding: 1rem;
 `;
 
+const AddBtn = (props) => {
+	const dispatch = useDispatch();
+
+    return <button className="btn btn_purple btn_right" style={{margin: '1rem'}}
+        onClick={() => {
+            dispatch(addToCart(props.ticket))
+        }}> Добавить в корзину
+        <AddShoppingCartIcon 
+            style={{ fontSize: 20, 
+            paddingLeft: '1rem',
+            display: 'block'}}>
+        </AddShoppingCartIcon>
+    </button>
+}
+
 class TicketDetail extends Component {
 
     static propTypes = {
         ticket: PropTypes.object.isRequired,
-        getTicket: PropTypes.func.isRequired
+        getTicket: PropTypes.func.isRequired,
+        //addToCart: PropTypes.func.isRequired
     };
 
     componentDidMount() {
@@ -51,7 +68,6 @@ class TicketDetail extends Component {
         return `${formStartDate} - ${formEndDate}`;
     }
 
-
     render() {
         const { ticket } = this.props;
 
@@ -70,13 +86,10 @@ class TicketDetail extends Component {
             minute: "numeric"
         });
 
-        const dateFormatter = new Intl.DateTimeFormat("ru");
-
         return (
             <Fragment>
                 <div className='content' key={ticket.id}>
                     <h1>{ticket.ticketTitle}</h1>
-                    <h1>{ticket.startDate}</h1>
 
                     <DiscriptionCard 
                         title={ticket.keyWords} 
@@ -113,14 +126,7 @@ class TicketDetail extends Component {
                             <Info style={{fontWeight: '600'}}>{ticket.price} ₽</Info>
                         </Grid>
                         <Grid item xs={12} sm={3}>
-                            <button className="btn btn_purple btn_right" style={{margin: '1rem'}}>
-                                Добавить в корзину
-                                <AddShoppingCartIcon 
-                                    style={{ fontSize: 20, 
-                                    paddingLeft: '1rem',
-                                    display: 'block'}}>
-                                </AddShoppingCartIcon>
-                            </button>
+                            <AddBtn ticket={ticket}/>
                         </Grid>
                     </StyledGrid>
 
@@ -135,4 +141,11 @@ const mapStateToProps = (state) => ({
     ticket: state.ticket.ticket
 });
 
-export default connect(mapStateToProps, { getTicket })(TicketDetail);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getTicket: (ticketID, url) => dispatch(getTicket(ticketID, url)),
+        //addToCart: (ticket) => {dispatch(addToCart(ticket))}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TicketDetail);

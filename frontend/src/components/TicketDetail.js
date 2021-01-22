@@ -41,8 +41,7 @@ class TicketDetail extends Component {
 
     static propTypes = {
         ticket: PropTypes.object.isRequired,
-        getTicket: PropTypes.func.isRequired,
-        //addToCart: PropTypes.func.isRequired
+        getTicket: PropTypes.func.isRequired
     };
 
     componentDidMount() {
@@ -143,8 +142,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getTicket: (ticketID, url) => dispatch(getTicket(ticketID, url)),
-        //addToCart: (ticket) => {dispatch(addToCart(ticket))}
+        getTicket: (ticketID, url) => dispatch(getTicket(ticketID, url))
     }
 }
 

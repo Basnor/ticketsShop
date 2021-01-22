@@ -1,6 +1,7 @@
 import {
     ADD_TO_CART,
     REMOVE_ITEM,
+    REMOVE_CARTS,
     SUB_QUANTITY,
     ADD_QUANTITY
 } from '../actions/types';
@@ -43,7 +44,7 @@ export default function (state = {}, action) {
             for (let n in newState) {
                 if (!newState[n]) continue;
 
-                if (newState[n].ticketId === action.payload.ticket.id) {
+                if (n == action.payload.id) {
                     delete newState[n];
                 }
             }
@@ -53,7 +54,7 @@ export default function (state = {}, action) {
             for (let n in newState) {
                 if (!newState[n]) continue;
 
-                if (newState[n].ticketId === action.payload.ticket.id) {
+                if (n == action.payload.id) {
                     newState[n].num++;
                     break;
                 }
@@ -64,7 +65,7 @@ export default function (state = {}, action) {
             for (let n in newState) {
                 if (!newState[n]) continue;
 
-                if (newState[n].ticketId === action.payload.ticket.id) {
+                if (n == action.payload.id) {
                     if (newState[n].num == 1) {
                         delete newState[n];
                     } else {
@@ -72,6 +73,14 @@ export default function (state = {}, action) {
                     }
                     break;
                 }
+            }
+
+            break;
+        case REMOVE_CARTS:
+            for (let n in newState) {
+                if (!newState[n]) continue;
+
+                delete newState[n];
             }
 
             break;

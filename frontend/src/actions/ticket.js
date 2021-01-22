@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { GET_TICKET } from '../actions/types';
+import { GET_TICKETS } from '../actions/types';
 import { GET_TICKET_TYPES } from '../actions/types';
 
 axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN';
@@ -12,6 +13,17 @@ export const getTicket = (ticketID, url) => dispatch => {
         .then(result => {
             dispatch({
                 type: GET_TICKET,
+                payload: result.data
+            });
+        }).catch(error => console.log(error));
+};
+
+// Get tickets
+export const getTickets = () => dispatch => {
+    axios.get(`tickets/api/`)
+        .then(result => {
+            dispatch({
+                type: GET_TICKETS,
                 payload: result.data
             });
         }).catch(error => console.log(error));

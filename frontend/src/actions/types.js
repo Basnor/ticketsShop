@@ -1,6 +1,8 @@
 export const GET_EVENT = "GET_EVENT";
 export const GET_TICKET = "GET_TICKET";
+export const GET_TICKETS = "GET_TICKETS";
 export const GET_TICKET_TYPES = "GET_TICKET_TYPES";
+export const REMOVE_CARTS = "REMOVE_CARTS";
 
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_ITEM = 'REMOVE_ITEM';

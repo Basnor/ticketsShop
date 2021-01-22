@@ -1,6 +1,7 @@
 import {
     ADD_TO_CART,
     REMOVE_ITEM,
+    REMOVE_CARTS,
     SUB_QUANTITY,
     ADD_QUANTITY
 } from './types';
@@ -16,25 +17,32 @@ export const addToCart = (ticket) => {
 }
 
 //remove item action
-export const removeItem = (ticket) => {
+export const removeItem = (id) => {
     return {
         type: REMOVE_ITEM,
-        payload: { ticket }
+        payload: { id }
     }
 }
 
 //subtract qt action
-export const subtractQuantity = (ticket) => {
+export const subtractQuantity = (id) => {
     return {
         type: SUB_QUANTITY,
-        payload: { ticket }
+        payload: { id }
     }
 }
 
-//add qt action
-export const addQuantity = (ticket) => {
+//remove all carts
+export const addQuantity = (id) => {
     return {
         type: ADD_QUANTITY,
-        payload: { ticket }
+        payload: { id }
+    }
+} 
+
+//add qt action
+export const removeCarts = () => {
+    return {
+        type: REMOVE_CARTS
     }
 } 

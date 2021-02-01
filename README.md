@@ -7,7 +7,7 @@ The backend uses Django Rest Framework. Frontend is React.
 
 Layouts: <https://www.figma.com/file/fbGm9iJEDOyLZGu5CB47dI/TPU-term?node-id=0%3A1>
 
-## Build
+## Run project
 
 To get this project running, follow these steps: 
 
@@ -23,8 +23,8 @@ $ pip install -r requirements.txt
 
 # Prepare django
 python manage.py migrate
-python manage.py loaddata db.json 
 python manage.py createsuperuser
+python manage.py loaddata dump.json 
 
 # Start dev web server
 python manage.py runserver
@@ -64,8 +64,8 @@ python manage.py makemigrations
 python manage.py migrate
 
 # Dump database in to a db.json file
-python manage.py dumpdata > db.json
+python manage.py dumpdata --natural-foreign --indent=2 --exclude=accounts --exclude=auth --exclude=contenttypes > dump.json
 
 # Load the fixtures(database dumps) into database
-python manage.py loaddata db.json
+python manage.py loaddata dump.json
 ```
